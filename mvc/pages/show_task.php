@@ -20,12 +20,10 @@
 <?php
 //this is how you print something  $data contains the record that was selected on the table.
 print(utility\htmlTable::generateTableFromOneRecord($data));
-//print_r($data);
 ?>
 
 <form action="index.php?page=tasks&action=save&id=<?php echo $data->id; ?>" method="post">
 
-    id: <input type="text" name="id" value="<?php echo $data->id; ?>"><br>
     owneremail: <input type="text" name="owneremail" value="<?php echo $data->owneremail; ?>"><br>
     ownerid: <input type="text" name="ownerid" value="<?php echo $data->ownerid; ?>"><br>
     createddate: <input type="text" name="createddate" value="<?php echo $data->createddate; ?>"><br>

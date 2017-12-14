@@ -67,17 +67,19 @@ class tasksController extends http\controller
         print_r($_POST);
 
     }
-
+    //
     public static function save() {
-        session_start();
-        $task = new todo();
-
-        $task->body = $_POST['body'];
-        $task->ownerid = $_SESSION['userID'];
-        $task->save();
+        $user = todos::findOne($_REQUEST['id']);
+        $user->owneremail = $_POST['owneremail'];
+        $user->ownerid = $_POST['ownerid'];
+        $user->createddate = $_POST['createddate'];
+        $user->duedate = $_POST['duedate'];
+        $user->message = $_POST['message'];
+        $user->isdone = $_POST['isdone'];
+        $user->save();
+        header("Location: index.php?page=tasks&action=all");
 
     }
-
     //this is the delete function.  You actually return the edit form and then there should be 2 forms on that.
     //One form is the todo and the other is just for the delete button
     public static function delete()

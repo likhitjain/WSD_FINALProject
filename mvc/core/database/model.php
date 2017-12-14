@@ -14,9 +14,10 @@ abstract class model
             exit;
         }
 
-
+        $INSERT=FALSE;
         if ($this->id != '') {
             $sql = $this->update();
+            echo 'in update';
         } else {
             $sql = $this->insert();
             $INSERT = TRUE;
