@@ -99,7 +99,7 @@ class tasksController extends http\controller
     {
         $record = todos::findOne($_REQUEST['id']);
         $record->delete();
-        print_r($_POST);
+        print_r("Record successfully deleted");
 
     }
 
