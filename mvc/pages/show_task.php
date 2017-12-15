@@ -24,12 +24,12 @@ print(utility\htmlTable::generateTableFromOneRecord($data));
 
 <form action="index.php?page=tasks&action=save&id=<?php echo $data->id; ?>" method="post">
 
-    owneremail: <input type="text" name="owneremail" value="<?php echo $data->owneremail; ?>"><br>
-    ownerid: <input type="text" name="ownerid" value="<?php echo $data->ownerid; ?>"><br>
-    createddate: <input type="text" name="createddate" value="<?php echo $data->createddate; ?>"><br>
-    duedate: <input type="text" name="duedate" value="<?php echo $data->duedate; ?>"><br>
-    message: <input type="text" name="message" value="<?php echo $data->message; ?>"><br>
-    isdone: <input type="text" name="isdone" value="<?php echo $data->isdone; ?>"><br>
+    Owneremail: <input type="text" name="owneremail" value="<?php echo $data->owneremail; ?>"><br>
+    Ownerid: <input type="text" name="ownerid" value="<?php echo $data->ownerid; ?>"><br>
+    Createddate: <input type="text" name="createddate" value="<?php echo $data->createddate; ?>"><br>
+    Duedate: <input type="text" name="duedate" value="<?php echo $data->duedate; ?>"><br>
+    Message: <input type="text" name="message" value="<?php echo $data->message; ?>"><br>
+    isDone: <input type="text" name="isdone" value="<?php echo $data->isdone; ?>"><br>
     <input type="submit" value="Submit form">
 </form>
 
