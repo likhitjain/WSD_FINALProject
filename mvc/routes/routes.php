@@ -180,6 +180,7 @@ class routes
         $routes[] = routeProcedure::create('GET', 'register', 'accounts', 'accountsController', 'register');
         $routes[] = routeProcedure::create('POST', 'register', 'accounts', 'accountsController','store');
         $routes[] = routeProcedure::create('GET', 'fetchTodo', 'tasks', 'tasksController', 'fetchTodo');
+        $routes[] = routeProcedure::create('GET', 'logout', 'accounts', 'accountsController', 'logout');
         return $routes;
     }
 }
