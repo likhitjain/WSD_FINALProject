@@ -1,8 +1,3 @@
-<?php
-
-include = style.html;
- 
-?>
 <!doctype html>
 
 <html lang="en">
@@ -24,7 +19,7 @@ include = style.html;
 
 
 <h1>
-  ?  <?php
+<?php
 
     //this how to print some data;
     echo $data['site_name'];

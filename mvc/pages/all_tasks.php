@@ -28,7 +28,7 @@ print utility\htmlTable::genarateTableFromMultiArray($data);
 
 <form action="index.php?page=tasks&action=insert" method="post">
 
-    <input type="hidden" name="id"><br>
+    
     Owneremail: <input type="text" name="owneremail" ><br>
     Ownerid: <input type="text" name="ownerid" ><br>
     Createddate: <input type="text" name="createddate" ><br>

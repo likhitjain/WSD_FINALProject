@@ -179,8 +179,7 @@ class routes
         $routes[] = routeProcedure::create('POST', 'insert', 'tasks', 'tasksController', 'insert');
         $routes[] = routeProcedure::create('GET', 'register', 'accounts', 'accountsController', 'register');
         $routes[] = routeProcedure::create('POST', 'register', 'accounts', 'accountsController','store');
-
-
+        $routes[] = routeProcedure::create('GET', 'fetchTodo', 'tasks', 'tasksController', 'fetchTodo');
         return $routes;
     }
 }

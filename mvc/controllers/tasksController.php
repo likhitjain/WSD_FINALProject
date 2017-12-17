@@ -76,6 +76,7 @@ class tasksController extends http\controller
         $user->duedate = $_POST['duedate'];
         $user->message = $_POST['message'];
         $user->isdone = $_POST['isdone'];
+        $user->userid = $_SESSION('usern id');
         $user->save();
         header("Location: index.php?page=tasks&action=all");
 
@@ -101,6 +102,15 @@ class tasksController extends http\controller
         $record->delete();
         print_r("Record successfully deleted");
 
+    }
+    
+    
+     public static function fetchTodo()
+    {
+        session_start();
+        $id = $_SESSION["userID"];
+        $x = todos::searchTodo($id);
+        self::getTemplate('all_tasks',$x);
     }
 
 }
