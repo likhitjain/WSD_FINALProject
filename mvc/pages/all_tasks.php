@@ -19,9 +19,23 @@
 <h1>Tasks:</h1>
 
 <?php
-//this is how you print something
 
-include (header.php");
+include "header.php";
+?>
+
+
+<!--<form action="index.php?page=accounts&action=profile">
+    <button type="submit"  value="profile"> My Profile </button>
+</form-->
+
+<a href="index.php?page=accounts&action=profile">My Profile</a>
+
+
+
+
+
+<?php
+
 print utility\htmlTable::genarateTableFromMultiArray($data);
 
 

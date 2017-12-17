@@ -148,4 +148,21 @@ class accountsController extends http\controller
           header("Location: index.php?page=homepage&action=show");
           exit();
      }
+     
+       public static function profile()
+          {
+     
+                 if (session_status()==PHP_SESSION_NONE)
+                 {
+                   session_start();
+                     
+                 }
+                 $record = accounts::findOne($_SESSION['userID']);
+                 self::getTemplate('show_account', $record);
+
+     
+              }
+
+
+     
 }
