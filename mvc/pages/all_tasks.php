@@ -29,6 +29,7 @@ include "header.php";
 </form-->
 
 <a href="index.php?page=accounts&action=profile">My Profile</a>
+<a href="index.php?page=accounts&action=editprofile">Edit Profile</a>
 
 
 
