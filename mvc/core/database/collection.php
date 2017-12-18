@@ -69,7 +69,7 @@ abstract class collection
         if (is_null($recordsSet)) {
             return FALSE;
         } else {
-            return $recordsSet[0];
+            return $recordsSet;
         }
     }
 }

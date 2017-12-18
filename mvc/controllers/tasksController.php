@@ -69,6 +69,12 @@ class tasksController extends http\controller
     }
     //
     public static function save() {
+    
+            if (session_status()==PHP_SESSION_NONE)
+                 {
+                   session_start();
+                     
+                 }
         $user = todos::findOne($_REQUEST['id']);
         $user->owneremail = $_POST['owneremail'];
         $user->ownerid = $_POST['ownerid'];
@@ -76,41 +82,53 @@ class tasksController extends http\controller
         $user->duedate = $_POST['duedate'];
         $user->message = $_POST['message'];
         $user->isdone = $_POST['isdone'];
-        $user->userid = $_SESSION('usern id');
-        $user->save();
-        header("Location: index.php?page=tasks&action=all");
-
+        $user->userid = $_SESSION['userID'];
+       $user->save();
+     //  print_r($user);
+       // header("Location: index.php?page=tasks&action=all");
+       self::fetchTodo();
     }
-    //
+    
     public static function insert() {
+    
         $user=new todo();
+            if (session_status()==PHP_SESSION_NONE)
+                 {
+                   session_start();
+                     
+                 }
         $user->owneremail = $_POST['owneremail'];
         $user->ownerid = $_POST['ownerid'];
         $user->createddate = $_POST['createddate'];
         $user->duedate = $_POST['duedate'];
         $user->message = $_POST['message'];
         $user->isdone = $_POST['isdone'];
+        $user->userid = $_SESSION['userID'];
         $user->save();
-        header("Location: index.php?page=tasks&action=all");
-
+       // print_r($user);
+         self::fetchTodo();
     }
-    //this is the delete function.  You actually return the edit form and then there should be 2 forms on that.
-    //One form is the todo and the other is just for the delete button
+  
     public static function delete()
     {
         $record = todos::findOne($_REQUEST['id']);
         $record->delete();
-        print_r("Record successfully deleted");
+       // print_r("Record successfully deleted");
+       self::fetchTodo();
 
     }
     
     
      public static function fetchTodo()
     {
-        session_start();
+           if (session_status()==PHP_SESSION_NONE)
+                 {
+                   session_start();
+                     
+                 }
         $id = $_SESSION["userID"];
         $x = todos::searchTodo($id);
-        self::getTemplate('all_tasks',$x);
+       self::getTemplate('all_tasks',$x);
     }
 
 }

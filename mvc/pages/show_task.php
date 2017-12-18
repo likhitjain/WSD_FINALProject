@@ -20,7 +20,9 @@
 <?php
 //this is how you print something  $data contains the record that was selected on the table.
 include ("header.php");
+if(!empty($data)){
 print(utility\htmlTable::generateTableFromOneRecord($data));
+}
 ?>
 
 <form action="index.php?page=tasks&action=save&id=<?php echo $data->id; ?>" method="post">
