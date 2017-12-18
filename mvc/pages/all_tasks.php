@@ -41,7 +41,7 @@ include "header.php";
             print utility\htmlTable::genarateTableFromMultiArray($data);
         }
 
-    ?
+    ?>
 
 
 
