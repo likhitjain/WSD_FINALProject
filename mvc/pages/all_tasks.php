@@ -15,23 +15,24 @@
     <![endif]-->
 </head>
 
-<body>
-<h1>Tasks:</h1>
+<body style='background-color:gainsboro'>
+<br>
 
 <?php
-
 include "header.php";
 ?>
 
 
-<!--<form action="index.php?page=accounts&action=profile">
-    <button type="submit"  value="profile"> My Profile </button>
-</form-->
+<h1>Tasks:</h1>
+
+
+
+
 
 <a href="index.php?page=accounts&action=profile">My Profile</a>
-<a href="index.php?page=accounts&action=editprofile">Edit Profile</a>
 
 
+<br>
 
  <?php
 //this is how you print something
