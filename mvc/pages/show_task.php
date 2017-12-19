@@ -15,16 +15,40 @@
     <![endif]-->
 </head>
 
-<body>
+<body  style='background-color:gainsboro'>
 
+<br>
 <?php
+include "header.php";
+?>
+
+<b><?php
 //this is how you print something  $data contains the record that was selected on the table.
-include ("header.php");
 if(!empty($data)){
 print(utility\htmlTable::generateTableFromOneRecord($data));
 }
-?>
+?></b>
 
+<br>
+<br>
+<br>
+<style>
+
+   div
+    {
+    border: 5px darkred;
+    background-color: whitesmoke;
+    border-style: solid;
+    padding: 50px 50px 50px 50px;
+    height: 350px;
+    width: 350px;
+    margin-left: 5em;
+    }
+    
+
+</style>
+
+<div>
 <form action="index.php?page=tasks&action=save&id=<?php echo $data->id; ?>" method="post">
 
     Owneremail: <input type="email" name="owneremail" value="<?php echo $data->owneremail; ?>"><br>
@@ -33,11 +57,13 @@ print(utility\htmlTable::generateTableFromOneRecord($data));
     Duedate: <input type="text" name="duedate" value="<?php echo $data->duedate; ?>"><br>
     Message: <input type="text" name="message" value="<?php echo $data->message; ?>"><br>
     isDone: <input type="text" name="isdone" value="<?php echo $data->isdone; ?>"><br>
-    <input type="submit" value="Submit form">
+    <input type="submit" value="Submit form"><br>
+     <button type="submit" form="form1" value="delete">Delete</button>
 </form>
+</div>
 
 <form action="index.php?page=tasks&action=delete&id=<?php echo $data->id; ?> " method="post" id="form1">
-    <button type="submit" form="form1" value="delete">Delete</button>
+   
 </form>
 
 

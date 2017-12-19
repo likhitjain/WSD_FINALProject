@@ -15,8 +15,9 @@
     <![endif]-->
 </head>
 
-<body>
+<body style='background-color:gainsboro'>
 
+<br>
 <?php include("header.php"); ?>
 
 <h1>Email: <?php echo $data->email; ?></h1>
@@ -32,6 +33,25 @@ print(utility\htmlTable::generateTableFromOneRecord($data));
 
 
 ?>
+<br>
+<br>
+<style>
+
+   div
+    {
+    border: 5px darkred;
+    background-color: whitesmoke;
+    border-style: solid;
+    padding: 50px 50px 50px 50px;
+    height: 350px;
+    width: 350px;
+    margin-left: 5em;
+    }
+    
+
+</style>
+
+<div>
 
 <form action="index.php?page=accounts&action=save&id=<?php echo $data->id; ?>" method="post">
 
@@ -40,14 +60,17 @@ print(utility\htmlTable::generateTableFromOneRecord($data));
     Last name: <input type="text" name="lname" value="<?php echo $data->lname; ?>"><br>
     Email: <input type="email" name="email" value="<?php echo $data->email; ?>"><br>
     Phone: <input type="number" name="phone" value="<?php echo $data->phone; ?>"><br>
-    Birthday: <input type="text" name="birthday" value="<?php echo $data->birthday; ?>"><br>
+    Birthday: <input type="date" name="birthday" value="<?php echo $data->birthday; ?>"><br>
     Gender: <input type="text" name="gender" value="<?php echo $data->gender; ?>"><br>
     <input type="submit" value="Submit form">
+    <button type="submit" form="form1" value="delete">Delete</button>
+    
 </form>
 
+</div>
 
 <form action="index.php?page=accounts&action=delete&id=<?php echo $data->id; ?> " method="post" id="form1">
-    <button type="submit" form="form1" value="delete">Delete</button>
+    
 </form>
 
 

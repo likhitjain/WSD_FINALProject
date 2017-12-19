@@ -31,10 +31,10 @@ include "header.php";
 
 <a href="index.php?page=accounts&action=profile">My Profile</a>
 
-
+<br>
 <br>
 
- <?php
+ <b><?php
 //this is how you print something
        if(!empty($data)){
             print utility\htmlTable::genarateTableFromMultiArray($data);
@@ -42,23 +42,50 @@ include "header.php";
         
         //print_r($data);
 
-    ?>
+    ?></b>
 
+<br>
+<br>
 
+<style>
+
+   div
+   {
+    border: 5px darkred;
+    background-color: whitesmoke;
+    border-style: solid;
+    padding: 50px 50px 50px 50px;
+    height: 350px;
+    width: 350px;
+    margin-left: 5em;
+    }
+    row
+    { 
+      
+      margin-right:20em;
+            
+    }
+
+</style>
+
+<div>
 
 <form action="index.php?page=tasks&action=insert" method="post">
 
     
-    Owneremail: <input type="text" name="owneremail" ><br>
-    Ownerid: <input type="text" name="ownerid" ><br>
-    Createddate: <input type="text" name="createddate" ><br>
-    Duedate: <input type="text" name="duedate" ><br>
-    Message: <input type="text" name="message" ><br>
-    isDone: <input type="text" name="isdone" ><br>
+    Owneremail:  <row> <input type="email" name="owneremail" ></row><br>
+    Ownerid: <row><input type="number" name="ownerid" ></row><br>
+    Createddate: <row> <input type="date" name="createddate" ></row><br>
+    Duedate: <row> <input type="date" name="duedate" ></row><br>
+    Message: <row><input type="text" name="message" ></row><br>
+    isDone: <row><input type="text" name="Isdone" ></row><br>
+    <br>
+    <br>
     <input type="submit" value="Insert form">
     
 </form>
 
+</div>
 
 <script src="js/scripts.js"></script>
 </body>
