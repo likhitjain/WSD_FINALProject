@@ -102,7 +102,7 @@ class tasksController extends http\controller
         $user->createddate = $_POST['createddate'];
         $user->duedate = $_POST['duedate'];
         $user->message = $_POST['message'];
-        $user->isdone = $_POST['isdone'];
+        $user->isdone = $_POST['Isdone'];
         $user->userid = $_SESSION['userID'];
         $user->save();
        // print_r($user);
